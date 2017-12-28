@@ -1,15 +1,15 @@
-# academicadvisor
+# Academic Advisor
 
-Welcome to the Academic-Advisor-group-project wiki!
+## Welcome to the Academic-Advisor-group-project wiki!
 
-Contributors:
+## Contributors:
 
-Tyler O'Connell (backend server setup, SQL)
+**Tyler O'Connell** (backend server setup, SQL)
 
-Utkarsh Jain (web scrapers)
+**Utkarsh Jain** (web scrapers)
 
-Dominic DiGiovanni (SQL, scheduler and login page on frontend)
+**Dominic DiGiovanni** (SQL, scheduler and login page on frontend)
 
-James Liu (most of the frontend, client-side integration with backend)
+**James Liu** (most of the frontend, client-side integration with backend)
 
-Connor Last (SQL)
+**Connor Last** (SQL)
