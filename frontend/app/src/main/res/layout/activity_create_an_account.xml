@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="wisc.academicadvisor.CreateAnAccount"
+    android:background="@color/darkgray">
+
+    <TextView
+        android:id="@+id/aboutYouText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account_about_you"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/aboutYouText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account_name"
+        android:layout_marginTop="22dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_below="@+id/usernameInputText"
+        android:layout_alignLeft="@+id/username"
+        android:layout_alignStart="@+id/username" />
+
+    <TextView
+        android:id="@+id/majorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account_major"
+        android:layout_below="@+id/nameText"
+        android:layout_alignLeft="@+id/nameText"
+        android:layout_alignStart="@+id/nameText"
+        android:layout_marginTop="35dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/interestsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account_interests"
+        android:layout_below="@+id/majorText"
+        android:layout_alignLeft="@+id/majorText"
+        android:layout_alignStart="@+id/majorText"
+        android:layout_marginTop="35dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+ <!--   <TextView
+        android:id="@+id/classesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account_classes"
+        android:layout_below="@+id/interestsText"
+        android:layout_alignLeft="@+id/interestsText"
+        android:layout_alignStart="@+id/interestsText"
+        android:layout_marginTop="150dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/> -->
+
+    <EditText
+        android:id="@+id/usernameInputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_alignBaseline="@+id/username"
+        android:layout_alignBottom="@+id/username"
+        android:layout_alignRight="@+id/aboutYouText"
+        android:layout_alignEnd="@+id/aboutYouText"
+        android:layout_toRightOf="@+id/username"
+        android:layout_toEndOf="@+id/username"
+        android:layout_marginLeft="10dp"/>
+
+    <EditText
+        android:id="@+id/nameInputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_alignBaseline="@+id/nameText"
+        android:layout_alignBottom="@+id/nameText"
+        android:layout_toRightOf="@+id/majorText"
+        android:layout_marginLeft="18dp"
+        android:layout_alignRight="@+id/usernameInputText"
+        android:layout_alignEnd="@+id/usernameInputText" />
+
+
+        <ImageView
+        android:id="@+id/rectmajor"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:src="@drawable/rectangle_trans_curve"
+        android:layout_alignRight="@+id/majorInputSpinner"
+        android:layout_alignEnd="@+id/majorInputSpinner"
+        android:layout_above="@+id/interestsText"
+        android:layout_alignLeft="@+id/majorInputSpinner"
+        android:layout_alignStart="@+id/majorInputSpinner"
+        android:layout_alignTop="@+id/majorInputSpinner"></ImageView>
+
+    <Spinner
+        android:id="@+id/majorInputSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:backgroundTint="@color/white"
+        android:layout_above="@+id/interestsText"
+        android:layout_toRightOf="@+id/interestsText"
+        android:layout_toEndOf="@+id/interestsText" />
+    <!-- android:background="@drawable/dropdown_arrow" -->
+
+    <EditText
+        android:id="@+id/interestsInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_alignBaseline="@+id/interestsText"
+        android:layout_alignBottom="@+id/interestsText"
+        android:layout_alignRight="@+id/interestsAddBtn"
+        android:layout_marginRight="100dp"
+        android:layout_toRightOf="@+id/interestsText"
+        android:layout_toEndOf="@+id/interestsText" />
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/lightBlue"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/interestsAddBtn"
+        android:layout_alignLeft="@+id/interestsAddBtn"
+        android:layout_alignStart="@+id/interestsAddBtn" />
+
+    <ListView
+        android:id="@+id/interestsInputList"
+        android:layout_width="165dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        android:layout_alignLeft="@+id/interestsInput"
+        android:layout_alignStart="@+id/interestsInput"
+        android:layout_below="@+id/interestsInput"
+        android:layout_alignRight="@+id/interestsInput"
+        android:layout_alignEnd="@+id/interestsInput"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0sp" />
+
+   <!-- <ListView
+        android:id="@+id/classesInputList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/classesText"
+        android:layout_toEndOf="@id/classesText"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/interestsInputList"
+        android:layout_marginTop="15dp"/> -->
+
+
+    <Button
+        android:id="@+id/interestsAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_alignBottom="@+id/interestsInput"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/interestsInput"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/lightBlue"/>
+
+
+    <!--   <SearchView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_alignTop="@+id/classesText"
+          android:id="@+id/coursesTakenSearch"
+          android:queryHint="Search here"
+          android:iconifiedByDefault="false"
+          android:layout_above="@+id/classesInputList"
+          android:layout_toRightOf="@+id/classesText"
+          android:layout_alignRight="@+id/classesInputList"
+          android:layout_alignEnd="@+id/classesInputList" /> -->
+
+
+</RelativeLayout>

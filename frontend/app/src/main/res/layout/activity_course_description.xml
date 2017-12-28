@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topLevel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wisc.academicadvisor.CourseDescription"
+    android:background="@color/darkgray">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminate="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/subLevel"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:id="@+id/course_UID"
+            android:background="@color/lightBlue"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="Course Not Found!"
+            android:textStyle="bold"
+            android:textSize="22pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:shadowColor="@color/black"
+            android:shadowRadius="7"/>
+
+
+        <TextView
+            android:id="@+id/course_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_UID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="Sorry, keep searching!"
+            android:textSize="12pt"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/credits_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/breadth_"
+            android:layout_below="@+id/course_title"
+            android:layout_marginTop="12dp"
+            android:text="Credits: "
+            android:textSize="7pt"
+            android:textStyle="bold"
+            android:layout_alignLeft="@+id/breadth_"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/breadth_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/course_UID"
+            android:layout_below="@+id/credits_"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="Breadth: "
+            android:textSize="7pt"
+            android:textStyle="bold"
+            android:layout_alignLeft="@+id/course_UID"
+            android:textColor="@color/white"/>
+
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/course_UID"
+            android:layout_alignStart="@+id/breadth_"
+            android:layout_below="@+id/breadth_"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/course_UID"
+            android:layout_alignLeft="@+id/breadth_">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/credits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/breadth_"
+            android:layout_toEndOf="@+id/credits_"
+            android:text="N/A"
+            android:textSize="7pt"
+            android:layout_toRightOf="@+id/credits_" />
+
+        <TextView
+            android:id="@+id/breadth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="7pt"
+            android:layout_alignBaseline="@+id/breadth_"
+            android:layout_alignBottom="@+id/breadth_"
+            android:layout_toEndOf="@+id/breadth_"
+            android:layout_toRightOf="@+id/breadth_" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

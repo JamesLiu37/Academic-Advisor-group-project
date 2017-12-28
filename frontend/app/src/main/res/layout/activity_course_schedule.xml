@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="wisc.academicadvisor.CourseSchedule"
+    android:padding="0dp"
+    android:background="@color/darkgray">
+
+    <TextView
+        android:id="@+id/scheduleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule Planner"
+        android:textSize="23dp"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+    <ListView
+        android:id="@+id/coursesAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scheduleTitle"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8.0sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="490dp"/>
+
+    <LinearLayout
+        android:id="@+id/dayLabelsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/coursesAdded"
+        android:layout_marginTop="120dp">
+
+        <RelativeLayout
+            android:id="@+id/currentMonthRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/currentMonthTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text=""
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/medium_dark_gray" />
+
+            <TextView
+                android:id="@+id/currentYearTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text=""
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:textColor="@color/medium_dark_gray" />
+
+        </RelativeLayout>
+        <!--
+                <RelativeLayout
+                    android:id="@+id/sundayHeaderRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="2" >
+
+                    <TextView
+                        android:id="@+id/sundayDateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:text=""
+                        android:textColor="@color/medium_dark_gray"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sundayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="6dp"
+                        android:text="sun"
+                        android:textColor="@color/medium_dark_gray"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/dayMarkerView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/strong_blue" />
+                </RelativeLayout>
+        -->
+        <RelativeLayout
+            android:id="@+id/mondayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/mondayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mondayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="MON"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tuesdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/tuesdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tuesdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="TUE"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/wednesdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/wednesdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/wednesdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="WED"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/thursdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/thursdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/thursdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="THU"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fridayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/fridayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:text=""
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fridayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="FRI"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+        <!--
+                <RelativeLayout
+                    android:id="@+id/saturdayHeaderRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="2" >
+
+                    <TextView
+                        android:id="@+id/saturdayDateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:text=""
+                        android:textColor="@color/medium_dark_gray"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/saturdayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="6dp"
+                        android:text="sat"
+                        android:textColor="@color/medium_dark_gray"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                -->
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/dayLabelsLinearLayout"
+        android:background="@color/medium_gray" />
+
+    <ScrollView
+        android:id="@+id/calendarScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/dividerView"
+        android:layout_alignParentBottom="true"
+        android:overScrollMode="never"
+        android:padding="0dp"
+        android:scrollbars="none"
+        android:fadingEdge="none" >
+
+        <RelativeLayout
+            android:id="@+id/calendarRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp" >
+
+            <LinearLayout
+                android:id="@+id/calendarSplitterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:padding="0dp" >
+
+                <RelativeLayout
+                    android:id="@+id/hoursRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp" >
+
+                    <include layout="@layout/calendar_times" />
+
+                    <TextView
+                        android:id="@+id/time7amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:text="7am"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time8amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center"
+                        android:text="8am"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time9amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="120dp"
+                        android:gravity="center"
+                        android:text="9am"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time10amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:text="10am"
+                        android:textSize="12dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time11amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="240dp"
+                        android:gravity="center"
+                        android:text="11am"
+                        android:textSize="12dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time12pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="300dp"
+                        android:gravity="center"
+                        android:text="12pm"
+                        android:textSize="12dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time1pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="360dp"
+                        android:gravity="center"
+                        android:text="1pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time2pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="420dp"
+                        android:gravity="center"
+                        android:text="2pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time3pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="480dp"
+                        android:gravity="center"
+                        android:text="3pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/time4pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="540dp"
+                        android:gravity="center"
+                        android:text="4pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time5pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="600dp"
+                        android:gravity="center"
+                        android:text="5pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time6pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="660dp"
+                        android:gravity="center"
+                        android:text="6pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time7pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="720dp"
+                        android:gravity="center"
+                        android:text="7pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/time8pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="780dp"
+                        android:gravity="center"
+                        android:text="8pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time9pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="840dp"
+                        android:gravity="center"
+                        android:text="9pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/time10pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="900dp"
+                        android:gravity="center"
+                        android:text="10pm"
+                        android:textSize="12dp"
+                        android:textColor="@color/white"/>
+
+                </RelativeLayout>
+                <!--
+                                <RelativeLayout
+                                    android:id="@+id/sundayRelativeLayout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2" >
+
+                                    <include layout="@layout/calendar_zebra" />
+
+                                </RelativeLayout>
+                -->
+                <RelativeLayout
+                    android:id="@+id/mondayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="960dp"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tuesdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="960dp"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/wednesdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="960dp"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/thursdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="960dp"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fridayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="960dp"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+                <!--
+                                <RelativeLayout
+                                    android:id="@+id/saturdayRelativeLayout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2" >
+
+                                    <include layout="@layout/calendar_zebra" />
+
+                                </RelativeLayout>
+                                -->
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <!--
+        <LinearLayout
+            android:id="@+id/refreshLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:background="@drawable/bordered_rectangle"
+            android:visibility="invisible">
+
+            <ProgressBar
+                android:id="@+id/refreshProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleLarge" />
+
+            <TextView
+                android:id="@+id/updatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textSize="24dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/updating" />
+
+        </LinearLayout>
+    -->
+</RelativeLayout>
